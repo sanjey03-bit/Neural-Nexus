@@ -1,0 +1,41 @@
+# R-Insight — Module 1 Python dependencies
+# Covers: Jupyter/Colab AI pipeline notebook + (if FastAPI is chosen) the REST backend.
+# Pin/adjust versions as needed once Antigravity resolves the environment; keep this file
+# updated any time a new package is introduced anywhere in the Python codebase.
+
+# --- Core notebook / environment ---
+jupyter>=1.0.0
+ipykernel>=6.29.0
+python-dotenv>=1.0.1
+
+# --- LLM + orchestration ---
+langchain>=0.2.0
+langchain-community>=0.2.0
+langgraph>=0.1.0            # if the multi-agent framework is built on LangGraph
+transformers>=4.42.0
+accelerate>=0.31.0
+torch>=2.3.0
+sentencepiece>=0.2.0
+
+# --- Embeddings + vector store (RAG) ---
+sentence-transformers>=3.0.0
+chromadb>=0.5.0
+
+# --- Document parsing (proposal upload → raw text) ---
+pypdf>=4.2.0
+python-docx>=1.1.2
+unstructured>=0.14.0        # optional: richer PDF/DOCX section parsing
+
+# --- REST backend (only if Python/FastAPI is the chosen backend framework —
+#     see project_guidelines.md for which stack this repo uses) ---
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.7.0
+mysql-connector-python>=9.0.0
+sqlalchemy>=2.0.30
+python-multipart>=0.0.9
+
+# --- Utilities ---
+requests>=2.32.0
+numpy>=1.26.0
+pandas>=2.2.0

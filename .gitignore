@@ -1,0 +1,83 @@
+# ==========================================
+# R-Insight: Root .gitignore
+# ==========================================
+
+# --- Java / Build Outputs ---
+*.class
+*.jar
+*.war
+target/
+out/
+build/
+.gradle/
+.mvn/wrapper/maven-wrapper.jar
+
+# --- Node / React / Frontend ---
+node_modules/
+npm-debug.log*
+yarn-error.log
+dist/
+dist-ssr/
+
+# Do NOT ignore package-lock.json or yarn.lock (as requested)
+!package-lock.json
+!yarn.lock
+
+# --- Python / Jupyter / ML ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+venv*/
+ENV/
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# --- Project-specific uploads & vector stores ---
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/chroma_db/
+
+# --- IDEs & OS Files ---
+.vscode/
+.idea/
+.settings/
+.project
+.classpath
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# --- Secrets, Credentials & Temp ---
+.env
+.env.*
+*.secret
+*.key
+logs/
+*.log
+tmp/
+temp/
+
+# --- Force track required folders & files ---
+!README.md
+!LICENSE
+!backend/
+!frontend/
+!ai-engine/
+!datasets/
+!docs/
+!architecture/
+!images/
