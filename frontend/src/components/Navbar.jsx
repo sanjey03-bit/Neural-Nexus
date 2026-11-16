@@ -23,11 +23,14 @@ export default function Navbar() {
 
       <div className="flex items-center gap-4">
         {/* Capstone Identification Tag */}
-        <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs text-gray-400">
-          <Cpu className="h-3.5 w-3.5 text-brand-accent" />
-          <span>Team R-Nexus</span>
-          <span className="text-gray-600">|</span>
-          <span className="font-semibold text-gray-300">Anna University</span>
+        <div className="hidden sm:flex items-center gap-3 px-3 py-1.5 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs text-gray-400">
+          <Cpu className="h-4 w-4 text-brand-accent shrink-0" />
+          <div className="flex flex-col text-left">
+            <span className="font-medium text-gray-200">Team Neural Nexus</span>
+            <span className="text-[10px] text-gray-400 leading-tight mt-0.5">
+              Sri Krishna College of<br />Engineering and Technology
+            </span>
+          </div>
         </div>
       </div>
     </header>

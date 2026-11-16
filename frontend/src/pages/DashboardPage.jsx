@@ -367,8 +367,8 @@ function ScoreCircularGauge({ label, score, justification, confidence, verdict =
     <div className="glass-card p-6 flex flex-col gap-4 border-white/[0.05]">
       <div className="flex items-center gap-4">
         {/* SVG Circle */}
-        <div className="relative h-18 w-18 shrink-0">
-          <svg className="h-full w-full -rotate-90">
+        <div className="relative h-[72px] w-[72px] shrink-0">
+          <svg className="h-full w-full -rotate-90" viewBox="0 0 72 72">
             <circle
               cx="36"
               cy="36"
@@ -392,22 +392,22 @@ function ScoreCircularGauge({ label, score, justification, confidence, verdict =
             <span className="text-[9px] text-gray-500 mt-0.5">/ 100</span>
           </div>
         </div>
-        <div>
-          <h3 className="font-bold text-white text-sm">{label}</h3>
+        <div className="flex-1 min-w-0 flex flex-col gap-1">
+          <h3 className="font-bold text-white text-sm leading-snug">{label}</h3>
           {verdict && (
-            <span className="text-[10px] font-semibold text-brand-accent mt-0.5 block">
+            <span className="text-[10px] font-semibold text-brand-accent block">
               {verdict}
             </span>
           )}
-          <div className="flex items-center gap-1.5 mt-1.5">
-            <div className="w-16 bg-white/[0.05] h-1 rounded-full overflow-hidden">
+          <div className="mt-1 w-full flex flex-col gap-1">
+            <div className="w-full bg-white/[0.05] h-1 rounded-full overflow-hidden">
               <div
                 className="bg-brand-accent h-full rounded-full"
                 style={{ width: `${confidence * 100}%` }}
               ></div>
             </div>
-            <span className="text-[9px] text-gray-400 font-semibold font-mono">
-              Conf: {Math.round(confidence * 100)}%
+            <span className="text-[10px] text-gray-400 font-semibold font-mono whitespace-nowrap truncate" title={`Confidence: ${Math.round(confidence * 100)}%`}>
+              Confidence {Math.round(confidence * 100)}%
             </span>
           </div>
         </div>

@@ -47,9 +47,9 @@ export default function Sidebar() {
       </div>
 
       <div className="p-3 rounded-2xl bg-white/[0.01] border border-white/[0.04]">
-        <div className="text-xs font-bold text-gray-400 mb-1">Capstone Demo</div>
+        <div className="text-xs font-bold text-gray-400 mb-1">R-Insight</div>
         <p className="text-[10px] text-gray-500 leading-relaxed">
-          Designed for zeroth/first panel review. Multi-agent evaluation is backed by RAG and explainable metrics.
+          AI-augmented research proposal review system — multi-agent evaluation for innovation, novelty, and quality, backed by RAG and explainable scoring.
         </p>
       </div>
     </aside>
