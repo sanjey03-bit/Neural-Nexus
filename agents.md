@@ -69,3 +69,41 @@ defined output, and must log its reasoning so the pipeline stays explainable.
 - Log each agent's intermediate output (not just the final synthesis) so a reviewer can trace how
   a score was reached — this is the explainability requirement from the project's literature
   review (XAI).
+
+---
+
+## Part C — Phase 2 Multi-Agent Risk & Funding Intelligence Framework
+
+Phase 2 extends the platform into an end-to-end Risk Assessment & Funding Decision Support system, operating on a 100% Zero-Cost Local Architecture.
+
+### 4. Comprehensive Risk Assessment Engine (`backend/phase2_engine.py`)
+- **Input**: Phase 1 extractions, scores, and proposal narrative.
+- **Job**: Evaluate 4 risk dimensions:
+  - Technical Risk: complexity, scalability, algorithmic dependencies, missing baselines.
+  - Financial Risk: line-item budget allocation, contingency buffers, burn rates, feasibility.
+  - Timeline Risk: milestones, task dependencies, delivery horizon.
+  - Resource Risk: team qualifications, lab and compute infrastructure.
+- **Output**: 0–100 dimension scores, risk classifications (Low/Medium/High/Critical), evidence citations, and actionable mitigations matching `phase2_risk_assessments`.
+
+### 5. Funding Readiness Engine
+- **Input**: Phase 1 intelligence + Phase 2 risk metrics.
+- **Job**: Evaluate 12 institutional rubric criteria (Research Quality, Novelty, Technical/Financial Feasibility, Methodology, Impact, Timeline, Resources, Risk Management, etc.).
+- **Output**: 0–100 readiness score, academic tiers (Highly Funding Ready, Funding Ready with Minor Improvements, Needs Significant Improvements, Not Yet Funding Ready), funding barriers, and missing information.
+
+### 6. Plagiarism & Textual Similarity Checker
+- **Input**: Proposal sentences and local ChromaDB reference corpus.
+- **Job**: Multi-tier originality verification: exact sentence matching, phrase shingle overlap, near-duplicate detection (RapidFuzz), and semantic vector alignment.
+- **Output**: Overlap metrics, side-by-side passage alignments, citation observations, and transparent limitations disclaimer.
+
+### 7. AI Proposal Enhancement Engine
+- **Input**: Section-by-section proposal narrative.
+- **Job**: Identify structural and methodological weaknesses; generate publication-quality academic rewrites with supporting evidence and reviewer justification; track user acceptance state.
+- **Output**: Persisted rows in `phase2_enhancements`.
+
+### 8. Explainable Decision Support Engine
+- **Input**: Consolidated Phase 1 and Phase 2 outputs.
+- **Job**: Synthesize composite decision score (0–100), advisory classification (Recommended for Further Consideration, Recommended After Improvements, Requires Major Revisions, Not Recommended in Current Form), positive/negative evaluation drivers, and priority applicant action items.
+- **Output**: Persisted rows in `phase2_decision_support`.
+
+### 9. Local PDF Documentation Compiler (`backend/pdf_generator.py`)
+- **Job**: Generate 4 downloadable, publication-grade evaluation PDF dossiers (Risk, Funding Readiness, Enhancements, Decision Support) 100% locally using ReportLab. Zero external paid APIs.

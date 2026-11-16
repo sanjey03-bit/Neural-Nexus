@@ -4,6 +4,13 @@ from sqlalchemy import Column, Integer, String, Float, Text, ForeignKey, DateTim
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from backend.database import Base
+from backend.models_phase2 import (
+    Phase2RiskAssessment,
+    Phase2FundingReadiness,
+    Phase2PlagiarismCheck,
+    Phase2Enhancement,
+    Phase2DecisionSupport,
+)
 
 class Proposal(Base):
     __tablename__ = "proposals"
@@ -22,6 +29,13 @@ class Proposal(Base):
     similarity_results = relationship("SimilarityResult", back_populates="proposal", cascade="all, delete-orphan")
     scores = relationship("Scores", back_populates="proposal", uselist=False, cascade="all, delete-orphan")
     evaluation_summary = relationship("EvaluationSummary", back_populates="proposal", uselist=False, cascade="all, delete-orphan")
+
+    # Phase 2 Cascading relationships
+    risk_assessment = relationship("Phase2RiskAssessment", back_populates="proposal", uselist=False, cascade="all, delete-orphan")
+    funding_readiness = relationship("Phase2FundingReadiness", back_populates="proposal", uselist=False, cascade="all, delete-orphan")
+    plagiarism_check = relationship("Phase2PlagiarismCheck", back_populates="proposal", uselist=False, cascade="all, delete-orphan")
+    enhancement = relationship("Phase2Enhancement", back_populates="proposal", uselist=False, cascade="all, delete-orphan")
+    decision_support = relationship("Phase2DecisionSupport", back_populates="proposal", uselist=False, cascade="all, delete-orphan")
 
 
 class ProposalExtraction(Base):

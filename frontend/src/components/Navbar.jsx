@@ -11,12 +11,12 @@ export default function Navbar() {
         <div>
           <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
             R-Insight
-            <span className="text-xs bg-brand-accent/10 border border-brand-accent/20 text-brand-accent px-2 py-0.5 rounded-full font-mono font-medium">
-              Module 1
+            <span className="text-xs bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-mono font-medium">
+              Phase 1 + 2
             </span>
           </h1>
-          <p className="text-xs text-gray-500 font-medium">
-            Proposal Intelligence & Innovation Discovery Engine
+          <p className="text-xs text-gray-400 font-medium">
+            Proposal Intelligence & Funding Decision Support System
           </p>
         </div>
       </div>

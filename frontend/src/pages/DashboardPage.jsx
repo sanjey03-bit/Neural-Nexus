@@ -115,13 +115,23 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <button
-          onClick={handlePrint}
-          className="glass-button-secondary py-2 text-xs flex items-center gap-2 self-stretch sm:self-auto"
-        >
-          <Printer className="h-3.5 w-3.5" />
-          Export Evaluation Summary (Print)
-        </button>
+        <div className="flex flex-wrap items-center gap-3 self-stretch sm:self-auto">
+          <Link
+            to={`/phase2/dashboard?proposalId=${proposalId}`}
+            className="glass-button-secondary py-2 text-xs flex items-center gap-2 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/10 transition-all font-semibold"
+          >
+            <ShieldAlert className="h-3.5 w-3.5 text-emerald-400" />
+            <span>Phase 2 Risk & Decisions →</span>
+          </Link>
+
+          <button
+            onClick={handlePrint}
+            className="glass-button-secondary py-2 text-xs flex items-center gap-2"
+          >
+            <Printer className="h-3.5 w-3.5" />
+            Export Evaluation Summary (Print)
+          </button>
+        </div>
       </div>
 
       {/* --- Score Gauge Panel --- */}

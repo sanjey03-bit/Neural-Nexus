@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Play, CheckCircle, AlertTriangle, Cpu, Loader, RefreshCw, Eye } from "lucide-react";
+import { Play, CheckCircle, AlertTriangle, Cpu, Loader, RefreshCw, Eye, ShieldAlert } from "lucide-react";
 
 export default function ProposalsListPage() {
   const [proposals, setProposals] = useState([]);
@@ -238,13 +238,23 @@ export default function ProposalsListPage() {
                     </td>
                     <td className="px-6 py-4 text-right">
                       {proposal.status === "completed" ? (
-                        <Link
-                          to={`/dashboard/${proposal.id}`}
-                          className="glass-button-primary py-1.5 px-3 text-xs inline-flex items-center gap-1.5"
-                        >
-                          <Eye className="h-3.5 w-3.5" />
-                          Dashboard
-                        </Link>
+                        <div className="flex items-center justify-end gap-2">
+                          <Link
+                            to={`/dashboard/${proposal.id}`}
+                            className="glass-button-primary py-1.5 px-3 text-xs inline-flex items-center gap-1.5"
+                          >
+                            <Eye className="h-3.5 w-3.5" />
+                            Phase 1
+                          </Link>
+                          <Link
+                            to={`/phase2/dashboard?proposalId=${proposal.id}`}
+                            className="glass-button-secondary py-1.5 px-3 text-xs inline-flex items-center gap-1.5 text-emerald-400 border-emerald-500/25 hover:border-emerald-500/50 hover:bg-emerald-500/10"
+                            title="Open Phase 2 Risk & Decision Support"
+                          >
+                            <ShieldAlert className="h-3.5 w-3.5 text-emerald-400" />
+                            Phase 2
+                          </Link>
+                        </div>
                       ) : (
                         <button
                           disabled

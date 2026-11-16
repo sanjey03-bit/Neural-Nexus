@@ -16,11 +16,12 @@ from backend.database import get_db, engine
 from backend.document_parser import extract_text
 from backend.ai_pipeline import process_proposal_pipeline, answer_reviewer_query_rag
 from backend.chroma_store import chroma_store
+from backend.phase2_routes import router as phase2_router
 
 # Create database tables if they do not exist
 models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="R-Insight API", description="Module 1 Proposal Intelligence API")
+app = FastAPI(title="R-Insight API", description="Module 1 & Phase 2 Proposal Intelligence & Decision Support API")
 
 # Configure CORS for local react client (usually port 5173 for Vite)
 app.add_middleware(
@@ -30,6 +31,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Mount Phase 2 Router (Risk Assessment, Funding Readiness, Plagiarism, Enhancements, Decision Support)
+app.include_router(phase2_router, prefix="/api/phase2", tags=["Phase 2 - Risk & Funding Intelligence"])
 
 @app.get("/")
 def read_root():

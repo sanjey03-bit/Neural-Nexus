@@ -77,6 +77,11 @@ tables:
 | `similarity_results` | per-proposal ranked list of similar reference docs + similarity score + narrative, FK to `proposals.id` |
 | `scores` | innovation_score, quality_score, novelty_verdict, each with justification text + confidence, FK to `proposals.id` |
 | `evaluation_summaries` | final plain-language summary text, FK to `proposals.id` |
+| `phase2_risk_assessments` | Technical, Financial, Timeline, Resource, and Overall Risk scores, risk classifications, weights, explanations, FK to `proposals.id` |
+| `phase2_funding_readiness` | 12-criterion funding readiness scores, classifications, strengths, weaknesses, funding barriers, recommendations, FK to `proposals.id` |
+| `phase2_plagiarism_checks` | exact, near-duplicate, phrase overlap, semantic similarity percentages, matching passages from reference corpus, FK to `proposals.id` |
+| `phase2_enhancements` | AI-assisted weakness identification, evidence, priority, actionable suggestions, suggested section rewrites, FK to `proposals.id` |
+| `phase2_decision_support` | consolidated Phase 1 + Phase 2 advisory verdict, decision score, executive summary, action items, disclaimers, FK to `proposals.id` |
 
 Keep foreign keys enforced. Any schema change must be reflected in `schema.sql` and mentioned in a
 commit/PR description.
